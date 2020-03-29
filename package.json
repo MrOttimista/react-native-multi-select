@@ -1,16 +1,23 @@
 {
-  "name": "react-native-multi-select",
+  "name": "multi-select-react-native",
   "version": "1.0.0",
-  "description": "react native package for multi select",
-  "main": "index.js",
+  "description": "A customizable react native package for multi select",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "react-native",
+    "multiple",
+    "select",
+    "multi",
+    "expo"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MrOttimista/react-native-multi-select.git"
   },
-  "author": "MrOttimista",
+  "author": "MrOttimista <adel.mohamed855@gmail.com>",
   "license": "ISC",
   "peerDependencies": {
     "react": "^16.0.0",
