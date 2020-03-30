@@ -11,6 +11,7 @@ import {
 export default function MultiSelect({
   selectedItems = [], // must be an empty array
   setSelectedItems,
+  text,
   data,
   componentStyle,
   buttonStyle,
@@ -24,7 +25,9 @@ export default function MultiSelect({
   return (
     <View style={componentStyle}>
       <TouchableOpacity style={buttonStyle} onPress={() => setIsOpened(true)}>
-        <Text>{`Select Item  (${selectedItems.length})`}</Text>
+        <Text> {text
+            ? `${text} (${selectedItems.length})`
+            : `Select Item (${selectedItems.length})`}</Text>
       </TouchableOpacity>
       <Modal animationType="fade" transparent={true} visible={isOpened}>
         <View style={styles.centeredView}>
