@@ -34,16 +34,16 @@ export default function MultiSelect({
               renderItem={({ item }) => (
                 <TouchableOpacity
                   style={[
-                    selectedItems.includes(item.id) && {
+                    selectedItems.includes(`${item.id}`) && {
                       backgroundColor: tintColor
                     },
                     styles.item
                   ]}
                   onPress={() => {
-                    !selectedItems.includes(item.id)
-                      ? setSelectedItems([...selectedItems, item.id])
+                    !selectedItems.includes(`${item.id}`)
+                      ? setSelectedItems([...selectedItems, `${item.id}`])
                       : setSelectedItems(
-                          selectedItems.filter(listItem => listItem !== item.id)
+                          selectedItems.filter(listItem => listItem !== `${item.id}`)
                         );
                   }}
                   ListEmptyComponent={<Text>No Item</Text>}
@@ -51,7 +51,7 @@ export default function MultiSelect({
                   <Text style={itemStyle}>{item.title}</Text>
                 </TouchableOpacity>
               )}
-              keyExtractor={item => item.id}
+              keyExtractor={item => `${item.id}`}
             />
             <View style={styles.bottomModal}>
               {hasResetButton && (
