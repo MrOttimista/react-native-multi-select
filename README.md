@@ -2,7 +2,7 @@
 A customizable  react native component that lets you select multiple items.
 
 <p align="center">
-<img src="./Emulate.gif" width="390" height="825">
+<img src="https://user-images.githubusercontent.com/40366999/77948831-48e0bb00-72c6-11ea-9d30-59a9420998ff.gif" width="390" height="825">
 </p>
 
 
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
 |        Props        |                                Explanation                                 | default value |
 |:-------------------:|:--------------------------------------------------------------------------:|:-------------:|
 |         data        | the data is an array of objects of id and title ex. [{id:1,title:'first'}] |       []      |
+|         text        |                           Text of the button                               |  Select Item  |
 |    selectedItems    |    The selected ids of items: must be a state to re-render every select    |       []      |
 |   setSelectedItems  |                    function that set the selected items                    |               |
 |      tintColor      |                       The color of the selected items                      |     yellow    |
