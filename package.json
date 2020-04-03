@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/MrOttimista/react-native-multi-select/issues"
   },
-  "homepage": "https://github.com/MrOttimista/react-native-multi-select#readme"
+  "homepage": "https://github.com/MrOttimista/react-native-multi-select#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0"
+  }
 }
