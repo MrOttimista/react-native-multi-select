@@ -7,15 +7,17 @@ A customizable  react native component that lets you select multiple items.
 <img src="https://user-images.githubusercontent.com/40366999/77948831-48e0bb00-72c6-11ea-9d30-59a9420998ff.gif" width="390" height="825">
 </p>
 
-
 ## Installation
+Run
+```
+npm i multi-select-react-native
+```
+in your project directory.
 
-Run `npm i multi-select-react-native` in your project directory.
 ## Usage
-
 This snippet would produce the output shown in the above gif
 
-```
+```jsx
 import * as React from "react";
 import { View, StyleSheet } from "react-native";
 import MultiSelect from "multi-select-react-native";
@@ -58,8 +60,6 @@ const styles = StyleSheet.create({
     fontSize: 20
   }
 });
-
-
 ```
 
 ## Props
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
 |    hasResetButton   |                       If it has a reset button or not                      |      true     |
 
 ## Contributing
-This component mean to be very customizable so feel free to add any issue
+This component mean to be very customizable so feel free to add any issue [here](https://github.com/MrOttimista/react-native-multi-select/issues).
