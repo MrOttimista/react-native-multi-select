@@ -2,9 +2,10 @@
   "name": "multi-select-react-native",
   "version": "1.0.2",
   "description": "A customizable react native package for multi select",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
   },
   "keywords": [
     "react-native",
@@ -26,5 +27,11 @@
   "bugs": {
     "url": "https://github.com/MrOttimista/react-native-multi-select/issues"
   },
-  "homepage": "https://github.com/MrOttimista/react-native-multi-select#readme"
+  "homepage": "https://github.com/MrOttimista/react-native-multi-select#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4"
+  }
 }
