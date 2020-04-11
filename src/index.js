@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Modal,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 
 export default function MultiSelect({
@@ -18,16 +18,20 @@ export default function MultiSelect({
   containerItemsStyle,
   itemStyle,
   tintColor = "yellow",
-  hasResetButton = true
+  hasResetButton = true,
+  highlight = false,
 }) {
   const [isOpened, setIsOpened] = React.useState(false);
   componentStyle;
   return (
     <View style={componentStyle}>
       <TouchableOpacity style={buttonStyle} onPress={() => setIsOpened(true)}>
-        <Text> {text
+        <Text>
+          {" "}
+          {text
             ? `${text} (${selectedItems.length})`
-            : `Select Item (${selectedItems.length})`}</Text>
+            : `Select Item (${selectedItems.length})`}
+        </Text>
       </TouchableOpacity>
       <Modal animationType="fade" transparent={true} visible={isOpened}>
         <View style={styles.centeredView}>
@@ -37,24 +41,37 @@ export default function MultiSelect({
               renderItem={({ item }) => (
                 <TouchableOpacity
                   style={[
-                    selectedItems.includes(`${item.id}`) && {
-                      backgroundColor: tintColor
-                    },
-                    styles.item
+                    selectedItems.includes(`${item.id}`) &&
+                      highlight && {
+                        backgroundColor: tintColor,
+                      },
+                    styles.item,
                   ]}
                   onPress={() => {
                     !selectedItems.includes(`${item.id}`)
                       ? setSelectedItems([...selectedItems, `${item.id}`])
                       : setSelectedItems(
-                          selectedItems.filter(listItem => listItem !== `${item.id}`)
+                          selectedItems.filter(
+                            (listItem) => listItem !== `${item.id}`
+                          )
                         );
                   }}
                   ListEmptyComponent={<Text>No Item</Text>}
                 >
-                  <Text style={itemStyle}>{item.title}</Text>
+                  <Text
+                    style={[
+                      itemStyle,
+                      selectedItems.includes(`${item.id}`) &&
+                        !highlight && {
+                          color: tintColor,
+                        },
+                    ]}
+                  >
+                    {item.title}
+                  </Text>{" "}
                 </TouchableOpacity>
               )}
-              keyExtractor={item => `${item.id}`}
+              keyExtractor={(item) => `${item.id}`}
             />
             <View style={styles.bottomModal}>
               {hasResetButton && (
@@ -84,7 +101,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 22
+    marginTop: 22,
   },
   modalView: {
     margin: 20,
@@ -97,11 +114,11 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5
+    elevation: 5,
   },
   bottomModal: {
     borderTopColor: "black",
@@ -109,17 +126,17 @@ const styles = StyleSheet.create({
     marginTop: 10,
     width: "90%",
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   item: {
-    flexDirection: "row"
+    flexDirection: "row",
   },
   doneText: {
     color: "blue",
-    fontSize: 18
+    fontSize: 18,
   },
   resetText: {
     color: "red",
-    fontSize: 18
-  }
+    fontSize: 18,
+  },
 });
