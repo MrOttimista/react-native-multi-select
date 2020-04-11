@@ -32,6 +32,7 @@ export default function MultiSelect({
             ? `${text} (${selectedItems.length})`
             : `Select Item (${selectedItems.length})`}
         </Text>
+
       </TouchableOpacity>
       <Modal animationType="fade" transparent={true} visible={isOpened}>
         <View style={styles.centeredView}>
@@ -46,6 +47,7 @@ export default function MultiSelect({
                         backgroundColor: tintColor,
                       },
                     styles.item,
+
                   ]}
                   onPress={() => {
                     !selectedItems.includes(`${item.id}`)
@@ -54,6 +56,7 @@ export default function MultiSelect({
                           selectedItems.filter(
                             (listItem) => listItem !== `${item.id}`
                           )
+
                         );
                   }}
                   ListEmptyComponent={<Text>No Item</Text>}
@@ -72,6 +75,7 @@ export default function MultiSelect({
                 </TouchableOpacity>
               )}
               keyExtractor={(item) => `${item.id}`}
+
             />
             <View style={styles.bottomModal}>
               {hasResetButton && (
