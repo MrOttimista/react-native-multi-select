@@ -1,3 +1,6 @@
+> :warning: **This is not maintained anymore.. Sorry 😢
+
+
 # Multi Select React Native
 A customizable  react native component that lets you select multiple items.
 
