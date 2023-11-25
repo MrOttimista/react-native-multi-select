@@ -1,6 +1,6 @@
 {
   "name": "multi-select-react-native",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A customizable react native package for multi select",
   "main": "lib/index.js",
   "scripts": {
